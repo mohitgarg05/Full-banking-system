@@ -15,7 +15,8 @@ export default  class Home extends Component{
         this.state={
             emailuserlogin:"",
             passworduserlogin:"",
-            loginconfirmed:false
+            loginconfirmed:false,
+            name:""
 
         }
     }
@@ -49,13 +50,22 @@ export default  class Home extends Component{
         else if(response.data.status.localeCompare("notexists")===0){
             alert("Email Not exist or wrong password!")
         }
+
+        // const res = await axios.get("http://localhost:8080/user/details",data);
+       
+        // let obj = res.data.response.find(o => o.UserEmail === this.state.emailuserlogin);
+        // console.log(obj.Name);
+        // this.setState({name: obj.Name})
+        // console.log(this.state.name);
+
+
     }
     
 
     render(){
 
         if(this.state.loginconfirmed){
-            return <Redirect to="/user/dashboard" />
+            return <Redirect to= {`/user/dashboard/${this.state.emailuserlogin}`}/>
         }
         return(
             
@@ -86,9 +96,9 @@ export default  class Home extends Component{
 
                             </form>
                             <div className="row " style={{marginTop:"20px"}}>
-                                <a href = '/signup'>
+                                {/* <a href = '/signup'> */}
                                     <button  className="btn ">Sign Up</button>
-                                  </a>
+                                  {/* </a> */}
                                 </div>
                                 
                         </div>

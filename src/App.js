@@ -6,7 +6,7 @@ import {Route } from 'react-router-dom';
 import Userlogin from './Components/userlogin'
 import UserSingup from './Components/usersingup'
 import UserVerification from './Components/userVerification'
-// import TransferHistory from './Components/TransferHistory'
+import UserDashboard from './Components/UserDashboard'
 function App() {
   return (
     <>
@@ -26,7 +26,9 @@ function App() {
       <Route exact path="/user/verification">
         <UserVerification />
       </Route>
-    
+      <Route exact path="/user/dashboard/:email">
+        <UserDashboard />
+      </Route>
 
     </>
   );

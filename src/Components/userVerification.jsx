@@ -37,7 +37,7 @@ export default  class UserVerification extends Component{
          }
 
 
-         axios.put("https://full-banking-system.herokuapp.com/user/signup/otp", data, {
+         axios.put("http://localhost:8080/user/signup/otp", data, {
         }).then(res => {
             console.log(res);
            

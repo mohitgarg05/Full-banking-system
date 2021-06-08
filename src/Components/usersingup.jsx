@@ -48,7 +48,7 @@ export default  class usersingup extends Component{
         }
         console.log(data);
 
-        axios.post("https://full-banking-system.herokuapp.com/user/signup",data , {
+        axios.post("http://localhost:8080/user/signup",data , {
             
         }).then((res)=>{
           
