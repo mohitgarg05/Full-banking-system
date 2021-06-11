@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from 'react-router-dom';
 export default  class usersingup extends Component{
     constructor(props) {
@@ -48,7 +49,7 @@ export default  class usersingup extends Component{
         }
         console.log(data);
 
-        axios.post("http://localhost:8080/user/signup",data , {
+        axios.post("https://full-banking-system.herokuapp.com/user/signup",data , {
             
         }).then((res)=>{
           
@@ -62,7 +63,7 @@ export default  class usersingup extends Component{
            else if(res.data.status.localeCompare("failure2") === 0){
                 alert("Phone number already exists")
             }
-            else if ( res.data.status.localeCompare("success")==0){
+            else if ( res.data.status.localeCompare("success")===0){
                 this.setState({verificationPage:true})
             
             }
@@ -81,20 +82,22 @@ render(){
             return <Redirect to="/user/verification" />
         }
     return(
+        <div id="App1">
         <div className="container m-auto" >
         <div className="row">
-            <div className="col-md-auto m-auto">
-                <h1>Enter Details</h1>
+            <div className="col-md-auto signuprow ">
+                <h1>ENTER DETAILS</h1>
             </div>
         </div>
         <hr />
         <div className="row">
-           <div className="col-md-auto m-auto">
+       
                <form  onSubmit={this.onSingup}>
-               
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
-                        <label>Balance Amount :</label>
+             
+                    <div className="row form-group" style={{marginTop:"20px"}} >
+                  
+                    <div className="col-md-2">
+                        <label>Balance:</label>
                     </div>
                     <div className="col">
                         <input name="balance" value={this.state.balance} onChange={this.handlechange}></input>
@@ -102,7 +105,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Name:</label>
                     </div>
                     <div className="col">
@@ -111,7 +114,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Email Address :</label>
                     </div>
                     <div className="col">
@@ -120,7 +123,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Password :</label>
                     </div>
                     <div className="col">
@@ -129,7 +132,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Phone Number :</label>
                     </div>
                     <div className="col">
@@ -138,7 +141,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Address :</label>
                     </div>
                     <div className="col">
@@ -146,8 +149,13 @@ render(){
                     </div>
                    
                 </div>
+             
+            
+           
+               
+                
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>City :</label>
                     </div>
                     <div className="col">
@@ -156,7 +164,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>State :</label>
                     </div>
                     <div className="col">
@@ -165,7 +173,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Country :</label>
                     </div>
                     <div className="col">
@@ -174,7 +182,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Nationality :</label>
                     </div>
                     <div className="col">
@@ -183,7 +191,7 @@ render(){
                    
                 </div>
                 <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col">
+                    <div className="col-md-2">
                         <label>Father's Name :</label>
                     </div>
                     <div className="col">
@@ -191,11 +199,13 @@ render(){
                     </div>
                    
                 </div>
+            
                 <div className="row form-group" style={{marginTop:"20px"}}>
              
-             <button type="submit" className="btn btn-primary">Submit</button>
+             <button type="submit" className="col-2 btn btn-primary">Submit</button>
      
          </div>
+       
                
                 
                </form>
@@ -203,6 +213,7 @@ render(){
            </div>
         </div>
         </div>
+      
     );
 }
 

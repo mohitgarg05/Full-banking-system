@@ -1,0 +1,52 @@
+.profile{
+    width: 800px;
+    margin-left: 300px;
+}
+.profileimg {
+    width: 1000px;
+    height: 60px;
+   margin: 0;
+   background-color: rgb(26,85,134);
+      
+   margin-top: 100px;
+   position: absolute;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+ padding-top: 7px;
+ padding-left: 4px;
+     z-index: 1;
+  }
+
+  .profilegrid {
+    
+
+    width: 1000px;
+    
+    background-color:  rgb(223,192,13);
+    margin-left: 0px;
+    
+  
+    margin-top: 150px;
+    
+     position: absolute;  
+  }
+  .profilecontent p{
+      color: black;
+      text-transform: capitalize;
+      font-size: 22px;
+      font-weight: bold;
+  }
+
+  .table th,td{
+      border: solid;
+  }
+
+  .table th{
+      background-color: rgb(26,85,134);
+
+  }
+  .table{
+      margin: 0;
+      padding: 0;
+  }

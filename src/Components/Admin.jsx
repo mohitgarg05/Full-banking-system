@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SideBar from './sidebar'
+import SideBar from './sidebarAdmin'
  export default  class Admin extends Component{
     constructor(props) {
         super(props);
@@ -34,7 +34,7 @@ import SideBar from './sidebar'
                             </div>
                         </div>
                         <div className="row" style={{marginTop:"20px"}}>
-                            <a>View List of users</a>
+                            View List of users
                         </div>
 
                     </div>
