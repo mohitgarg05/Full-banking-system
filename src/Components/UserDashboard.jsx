@@ -16,7 +16,7 @@ import axios from 'axios'
         }
         this.state= 
         {
-          balance :"",mail2:"",accountno:"",benebank:"",beneacc:"",upi:"",loggedin,length:""
+          balance :"",mail2:"",accountno:"",benebank:"",beneacc:"",upi:"",loggedin,length:"",length2:""
         }
     }
 
@@ -37,6 +37,15 @@ import axios from 'axios'
          const response2 = await axios.get("https://full-banking-system.herokuapp.com/holderget/beneficiary");
          
           this.setState({length : response2.data.response.length })
+          const data2={
+            email : mail1
+        }
+
+
+          const res3 = await axios.post("https://full-banking-system.herokuapp.com/transfer/hostory/get",data2)
+          console.log(res3.data.response.length);
+          this.setState({length2:res3.data.response.length})
+
 
      
     }
@@ -52,7 +61,7 @@ import axios from 'axios'
               
                   <div class="container user">
                     <div class="row img">
-                        <i class="fa fa-money-check-alt" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                        <i class="fas fa-money-check-alt" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
                     </div>
                     <div class="row grid">
                       <div class="content">
@@ -63,7 +72,7 @@ import axios from 'axios'
                   </div>
                   <div class="container user1">
                     <div class="row img1">
-                        <i class="fa fa-store-alt" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                        <i class="fas fa-store-alt" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
                     </div>
                     <div class="row grid2">
                       <div class="content">
@@ -74,18 +83,18 @@ import axios from 'axios'
                   </div>
                   <div class="container user2">
                     <div class="row img1">
-                        <i class="fa fa-exclamation-circle" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                        <i class="fas fa-exclamation-circle" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
                     </div>
                     <div class="row grid2">
                       <div class="content">
                         <p>Statments</p>
-                        <p style={{fontSize:"30px"}}>₹{this.state.balance}</p>
+                        <p style={{fontSize:"30px"}}>{this.state.length2}</p>
                       </div>
                     </div>
                   </div>
                   <div class="container user3">
                     <div class="row img2">
-                        <i class="fa fa-users" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                        <i class="fas fa-users" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
                     </div>
                     <div class="row grid3">
                       <div class="content">

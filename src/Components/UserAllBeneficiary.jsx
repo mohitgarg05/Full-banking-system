@@ -25,8 +25,11 @@ class UserProfile extends Component{
    async componentDidMount(){
     const mail1 = this.props.match.params.email;
     this.setState({mail2 : mail1})
+    const data ={
+        email : mail1
+    }
     
-    const res = await axios.get("https://full-banking-system.herokuapp.com/holderget/beneficiary");
+    const res = await axios.get("https://full-banking-system.herokuapp.com/holderget/beneficiary",data);
     
     this.setState({items: res.data.response})
     console.log(this.state.items);

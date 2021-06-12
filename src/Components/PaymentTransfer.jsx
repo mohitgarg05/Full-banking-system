@@ -18,16 +18,24 @@ class PaymentTransfer extends Component{
          loggedin=false
         }
         this.state={
-          mail2:"",receaccount:"",transferingammount:"",sendermoney:""
+          mail2:"",receaccount:"",transferingammount:"",sendermoney:"",Dates:"",Times:""
         }
     }
 
+   
     handlechange(e){
         this.setState({[e.target.name]: e.target.value})
     
     }
    async handlesubmit(e){
         e.preventDefault();
+        let today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      
+     
+      console.log(date);
         const data = {
            "receaccount" : this.state.receaccount,
            "transferingamout" :  parseInt(this.state.sendermoney)-parseInt(this.state.transferingammount),
@@ -37,6 +45,14 @@ class PaymentTransfer extends Component{
         const data2={
             "sendermail" : this.state.mail2,
             "transferingamout" :  parseInt(this.state.sendermoney)-parseInt(this.state.transferingammount)
+
+        }
+        const data3={
+            "sendermail" : this.state.mail2,
+            "receaccount" : this.state.receaccount,
+            "amount" : this.state.transferingammount,
+            'date' : date,
+            'time' : time
 
         }
        
@@ -49,12 +65,14 @@ class PaymentTransfer extends Component{
            
            const res3 = await axios.put("https://full-banking-system.herokuapp.com/receiver/update", data)
            const res2 = await axios.put("https://full-banking-system.herokuapp.com/sender/update",data2);
+           const res4 = await axios.post("http://localhost:8080/transfer/history", data3)
 
        }
        else if(res.data.condition.localeCompare("transfer")===0){
-        console.log(data2);
+        alert("Money transfered")
+        const res4 = await axios.post("http://localhost:8080/transfer/history", data3)
         const res2 = await axios.put("https://full-banking-system.herokuapp.com/sender/update",data2);
-           alert("Money transfered")
+           
        }
        else{
            alert("No Beneficiary Please add Beneificar")

@@ -13,6 +13,7 @@ import Logout from './Components/logout'
 import UserAddBeneficiary from "./Components/UserAddBeneficiary"
 import UserAllBeneficiary from './Components/UserAllBeneficiary'
 import PaymentTransfer from './Components/PaymentTransfer'
+import UserStatements from './Components/UserStatements'
 
 class App extends Component{
   constructor(props) {
@@ -59,6 +60,9 @@ class App extends Component{
       </Route>
       <Route exact path="/user/payment/:email">
         <PaymentTransfer />
+      </Route>
+      <Route exact path="/user/statements/:email">
+        <UserStatements />
       </Route>
       <Route exact path="/logout">
         <Logout />

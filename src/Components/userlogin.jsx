@@ -106,9 +106,11 @@ export default  class Userlogin extends Component{
 
                             </form>
                             <div className="row " style={{marginTop:"20px"}}>
+                                <div className="col">
                                 <a href = '/signup'>
-                                    <button  className="btn btn-primary singupbtn">Sign Up</button>
+                                    <button  className="btn btn-primary  singupbtn">Sign Up</button>
                                 </a>
+                                </div>
                                 </div>
                                 
                         </div>
