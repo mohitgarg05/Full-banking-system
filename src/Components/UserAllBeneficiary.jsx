@@ -29,7 +29,7 @@ class UserProfile extends Component{
         email : mail1
     }
     
-    const res = await axios.get("https://full-banking-system.herokuapp.com/holderget/beneficiary",data);
+    const res = await axios.post("https://full-banking-system.herokuapp.com/holderget/beneficiary",data);
     
     this.setState({items: res.data.response})
     console.log(this.state.items);
