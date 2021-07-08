@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoneyCheckAlt , faStoreAlt , faExclamationCircle ,faUsers } from '@fortawesome/free-solid-svg-icons';
   class UserDashboard extends Component{
     constructor(props) {
+
+      
       let loggedin = true;
         super(props);
         const token = localStorage.getItem("token");
@@ -16,6 +18,8 @@ import { faMoneyCheckAlt , faStoreAlt , faExclamationCircle ,faUsers } from '@fo
         if(token== null){
          loggedin=false
         }
+
+       
         this.state= 
         {
           balance :"",mail2:"",accountno:"",benebank:"",beneacc:"",upi:"",loggedin,length:"",length2:""
@@ -23,15 +27,14 @@ import { faMoneyCheckAlt , faStoreAlt , faExclamationCircle ,faUsers } from '@fo
     }
 
    async componentDidMount(){
-      //  const mail1 = this.props.match.params.email;
-      // this.setState({mail2 : mail1})
-
-      const mail = localStorage.getItem("Email")
+     
+      let mail = localStorage.getItem('Email')
       console.log(mail);
       this.setState({mail2 : mail})
-         const res = await axios.get("https://full-banking-system.herokuapp.com/user/details");
- 
-         let obj = res.data.response.find(o => o.UserEmail === mail);
+      
+       const res = await axios.get("https://full-banking-system.herokuapp.com/user/details");
+      console.log(res);
+         let obj = res.data.response.find(o => o.UserEmail === this.state.mail2);
          console.log(obj);
          this.setState({balance: obj.Balance})
          this.setState({accountno : obj.Account})
@@ -39,7 +42,7 @@ import { faMoneyCheckAlt , faStoreAlt , faExclamationCircle ,faUsers } from '@fo
          this.setState({beneacc : obj.BeneficiaryAccount})
          this.setState({upi : obj.UPI})
          const data2={
-          email : mail
+          email : this.state.mail2
       }
 
          const response2 = await axios.post("https://full-banking-system.herokuapp.com/holderget/beneficiary",data2);
@@ -53,6 +56,11 @@ import { faMoneyCheckAlt , faStoreAlt , faExclamationCircle ,faUsers } from '@fo
           this.setState({length2:res3.data.response.length})
 
 
+    
+
+   
+
+      
      
     }
 

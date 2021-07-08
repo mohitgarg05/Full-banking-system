@@ -53,8 +53,9 @@ export default  class Userlogin extends Component{
         if(response.data.status.localeCompare("LoggedIn")===0){
             const ranomtoken =  Math.floor(Math.random() * 10000000) + 10000;
             localStorage.setItem("token",ranomtoken)
+            localStorage.setItem("Email", this.state.emailuserlogin);
             this.setState({loginconfirmed:true})
-            localStorage.setItem("Email",this.state.emailuserlogin)
+            
 
             
            
