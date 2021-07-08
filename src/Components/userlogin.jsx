@@ -76,9 +76,8 @@ export default  class Userlogin extends Component{
 
     render(){
         
-        if(this.state.loginconfirmed ){
-            
-             return <Redirect to= '/user/dashboard/' />
+        if(this.state.loginconfirmed || this.state.mail2 ){
+             return <Redirect to= '/dashboard' />
          }
        
         return(

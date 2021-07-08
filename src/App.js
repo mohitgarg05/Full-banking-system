@@ -39,22 +39,22 @@ class App extends Component{
       <Route exact path="/user/verification">
         <UserVerification />
       </Route>
-      <Route exact path="/user/dashboard/">
+      <Route exact path="/dashboard/">
         <UserDashboard />
       </Route>
-      <Route exact path="/user/profile/">
+      <Route exact path="/profile/">
         <UserProfile />
       </Route>
-      <Route exact path="/user/addbenificiary/">
+      <Route exact path="/addbenificiary/">
         <UserAddBeneficiary />
       </Route>
-      <Route exact path="/user/allbenificiary/">
+      <Route exact path="/allbenificiary/">
         <UserAllBeneficiary />
       </Route>
-      <Route exact path="/user/payment/">
+      <Route exact path="/payment/">
         <PaymentTransfer />
       </Route>
-      <Route exact path="/user/statements/">
+      <Route exact path="/statements/">
         <UserStatements />
       </Route>
       <Route exact path="/logout">

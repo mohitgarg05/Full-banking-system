@@ -11,22 +11,22 @@ export default props => {
     
     <p style={{textTransform:"uppercase",letterSpacing:"5px",fontSize:"20px"}}>My Bank</p>
     <hr />
-      <a className="menu-item" href="/user/dashboard/" style={{marginTop:"40px"}}>
+      <a className="menu-item" href="/dashboard/" style={{marginTop:"40px"}}>
         Dashboard
       </a>
-      <a className="menu-item" href='/user/profile/' style={{marginTop:"40px"}}>
+      <a className="menu-item" href='/profile/' style={{marginTop:"40px"}}>
         My Profile
       </a>
-      <a className="menu-item" href='/user/addbenificiary/' style={{marginTop:"40px"}}>
+      <a className="menu-item" href='/addbenificiary/' style={{marginTop:"40px"}}>
         Add Benificiary
       </a>
-      <a className="menu-item" href='/user/allbenificiary/' style={{marginTop:"40px"}}>
+      <a className="menu-item" href='/allbenificiary/' style={{marginTop:"40px"}}>
         All Benificiary
       </a>
-      <a className="menu-item" href='/user/statements/' style={{marginTop:"40px"}}>
+      <a className="menu-item" href='/statements/' style={{marginTop:"40px"}}>
         Account Statments
       </a>
-      <a className="menu-item" href='/user/payment/' style={{marginTop:"40px"}}>
+      <a className="menu-item" href='/payment/' style={{marginTop:"40px"}}>
         Payment request
       </a>
           

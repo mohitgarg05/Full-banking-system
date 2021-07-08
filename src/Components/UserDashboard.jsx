@@ -5,6 +5,8 @@ import "../CSS/dashboard.css"
 import { Redirect ,Link} from 'react-router-dom';
 import { withRouter } from "react-router";
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMoneyCheckAlt , faStoreAlt , faExclamationCircle ,faUsers } from '@fortawesome/free-solid-svg-icons';
   class UserDashboard extends Component{
     constructor(props) {
       let loggedin = true;
@@ -30,7 +32,7 @@ import axios from 'axios'
          const res = await axios.get("https://full-banking-system.herokuapp.com/user/details");
  
          let obj = res.data.response.find(o => o.UserEmail === mail);
-         
+         console.log(obj);
          this.setState({balance: obj.Balance})
          this.setState({accountno : obj.Account})
          this.setState({benebank : obj.BeneficiaryBank})
@@ -65,7 +67,8 @@ import axios from 'axios'
               
                   <div class="container user">
                     <div class="row img">
-                        <i class="fas fa-money-check-alt" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                      <FontAwesomeIcon icon={faMoneyCheckAlt}   style={{fontSize:"50px",color:"white",marginTop:"10px"}}/>
+                        
                     </div>
                     <div class="row grid">
                       <div class="content">
@@ -76,7 +79,8 @@ import axios from 'axios'
                   </div>
                   <div class="container user1">
                     <div class="row img1">
-                        <i class="fas fa-store-alt" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                        <FontAwesomeIcon icon={faStoreAlt}  style={{fontSize:"50px",color:"white",marginTop:"10px"}}/>
+                        
                     </div>
                     <div class="row grid2">
                       <div class="content">
@@ -87,7 +91,8 @@ import axios from 'axios'
                   </div>
                   <div class="container user2">
                     <div class="row img1">
-                        <i class="fas fa-exclamation-circle" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                      <FontAwesomeIcon icon={faExclamationCircle} style={{fontSize:"50px",color:"white",marginTop:"10px"}}  />
+          
                     </div>
                     <div class="row grid2">
                       <div class="content">
@@ -98,7 +103,8 @@ import axios from 'axios'
                   </div>
                   <div class="container user3">
                     <div class="row img2">
-                        <i class="fas fa-users" style={{fontSize:"30px",color:"white",marginTop:"20px"}}></i>
+                    <FontAwesomeIcon icon={faUsers} style={{fontSize:"50px",color:"white",marginTop:"10px"}}  />
+            
                     </div>
                     <div class="row grid3">
                       <div class="content">
