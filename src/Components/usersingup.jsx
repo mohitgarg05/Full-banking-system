@@ -84,133 +84,128 @@ render(){
     return(
         <div id="App1">
         <div className="container m-auto" >
-        <div className="row">
-            <div className="col-md-auto signuprow ">
-                <h1>ENTER DETAILS</h1>
+            <div className="row">
+                <div className="col-md-auto signuprow ">
+                    <h1>ENTER DETAILS</h1>
+                </div>
             </div>
-        </div>
-        <hr />
+            <hr />
         <div className="row">
        
                <form  onSubmit={this.onSingup}>
-             
-                    <div className="row form-group" style={{marginTop:"20px"}} >
+               <div className="full">
+                <div className="col-md-6 stcol" >
+                    <div className="row form-group" style={{marginTop:"100px"}} >
                   
-                    <div className="col-md-2">
-                        <label>Balance:</label>
-                    </div>
-                    <div className="col">
-                        <input name="balance" value={this.state.balance} onChange={this.handlechange}></input>
-                    </div>
+                        <div className="col-md-4">
+                            <label>Balance:</label>
+                        </div>
+                        <div className="col">
+                            <input name="balance" value={this.state.balance} onChange={this.handlechange}></input>
+                        </div>
                    
+                    </div>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Name:</label>
+                        </div>
+                        <div className="col">
+                            <input name="name" value={this.state.name} onChange={this.handlechange}></input>
+                        </div>
+                    
+                    </div>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Email Address :</label>
+                        </div>
+                        <div className="col">
+                            <input name="emailaddress" value={this.state.emailaddress} onChange={this.handlechange}></input>
+                        </div>
+                    
+                    </div>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Password :</label>
+                        </div>
+                        <div className="col">
+                            <input type="password" name="password" value={this.state.password} onChange={this.handlechange}></input>
+                        </div>
+                    
+                    </div>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Phone Number :</label>
+                        </div>
+                        <div className="col">
+                            <input name="phone" value={this.state.phone} onChange={this.handlechange}></input>
+                        </div>
+                    
+                    </div>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Address :</label>
+                        </div>
+                        <div className="col">
+                            <input name="address" value={this.state.address} onChange={this.handlechange}></input>
+                        </div>
+                    </div>
                 </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Name:</label>
+
+                <div className="col-md-6" >
+                    <div className="row form-group" style={{marginTop:"100px"}}>
+                        <div className="col-md-4">
+                            <label>City :</label>
+                        </div>
+                        <div className="col">
+                            <input name="city" value={this.state.city} onChange={this.handlechange}></input>
+                        </div>
+                    
                     </div>
-                    <div className="col">
-                        <input name="name" value={this.state.name} onChange={this.handlechange}></input>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>State :</label>
+                        </div>
+                        <div className="col">
+                            <input name="state" value={this.state.state} onChange={this.handlechange}></input>
+                        </div>
+                    
                     </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Email Address :</label>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Country :</label>
+                        </div>
+                        <div className="col">
+                            <input name="country" value={this.state.country} onChange={this.handlechange}></input>
+                        </div>
+                    
                     </div>
-                    <div className="col">
-                        <input name="emailaddress" value={this.state.emailaddress} onChange={this.handlechange}></input>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Nationality :</label>
+                        </div>
+                        <div className="col">
+                            <input name="nationality" value={this.state.nationality} onChange={this.handlechange}></input>
+                        </div>
+                    
                     </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Password :</label>
+                    <div className="row form-group" style={{marginTop:"40px"}}>
+                        <div className="col-md-4">
+                            <label>Father's Name :</label>
+                        </div>
+                        <div className="col">
+                            <input name="fathername" value={this.state.fathername} onChange={this.handlechange}></input>
+                        </div>
+                    
                     </div>
-                    <div className="col">
-                        <input type="password" name="password" value={this.state.password} onChange={this.handlechange}></input>
                     </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Phone Number :</label>
                     </div>
-                    <div className="col">
-                        <input name="phone" value={this.state.phone} onChange={this.handlechange}></input>
+                    <div className="row form-group" style={{marginTop:"40px",marginLeft:"500px"}}>
+                        <button type="submit" className="col-2 btn btn-primary">Submit</button>
                     </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Address :</label>
-                    </div>
-                    <div className="col">
-                        <input name="address" value={this.state.address} onChange={this.handlechange}></input>
-                    </div>
-                   
-                </div>
-             
-            
-           
-               
-                
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>City :</label>
-                    </div>
-                    <div className="col">
-                        <input name="city" value={this.state.city} onChange={this.handlechange}></input>
-                    </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>State :</label>
-                    </div>
-                    <div className="col">
-                        <input name="state" value={this.state.state} onChange={this.handlechange}></input>
-                    </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Country :</label>
-                    </div>
-                    <div className="col">
-                        <input name="country" value={this.state.country} onChange={this.handlechange}></input>
-                    </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Nationality :</label>
-                    </div>
-                    <div className="col">
-                        <input name="nationality" value={this.state.nationality} onChange={this.handlechange}></input>
-                    </div>
-                   
-                </div>
-                <div className="row form-group" style={{marginTop:"20px"}}>
-                    <div className="col-md-2">
-                        <label>Father's Name :</label>
-                    </div>
-                    <div className="col">
-                        <input name="fathername" value={this.state.fathername} onChange={this.handlechange}></input>
-                    </div>
-                   
-                </div>
-            
-                <div className="row form-group" style={{marginTop:"20px"}}>
-             
-             <button type="submit" className="col-2 btn btn-primary">Submit</button>
-     
-         </div>
-       
-               
-                
-               </form>
+                    
+                </form>
               
-           </div>
+        </div>
         </div>
         </div>
       

@@ -59,7 +59,7 @@ export default  class UserVerification extends Component{
 
     render(){
         if(this.state.successfulllogin){
-            return <Redirect to="/user" />
+            return <Redirect to="/" />
         }
         return(
             

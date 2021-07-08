@@ -17,7 +17,7 @@
  padding-left: 4px;
      z-index: 1;
   }
-
+  
   .profilegrid {
     
 
@@ -40,13 +40,18 @@
 
   .table th,td{
       border: solid;
+      border-color: black;
   }
 
   .table th{
       background-color: rgb(26,85,134);
+      color: white;
 
   }
+  .table td{
+      font-weight: bold;
+  }
   .table{
-      margin: 0;
+     margin-left: 3px;
       padding: 0;
   }

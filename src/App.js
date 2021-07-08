@@ -2,8 +2,7 @@
 import './App.css';
 import React, { Component, useState } from 'react';
 import {Route } from 'react-router-dom';
- import Adminlogin from './Components/adminlogin'
- import Admin from './Components/Admin'
+
 import Userlogin from './Components/userlogin'
 import UserSingup from './Components/usersingup'
 import UserVerification from './Components/userVerification'
@@ -30,14 +29,8 @@ class App extends Component{
 
   
     return(<>
+     
       <Route exact path="/">
-        <Adminlogin />
-      </Route>
-
-      <Route exact path="/admin">
-        <Admin />
-      </Route>
-      <Route exact path="/user">
         <Userlogin  />
       </Route>
       <Route exact path="/signup">
@@ -46,22 +39,22 @@ class App extends Component{
       <Route exact path="/user/verification">
         <UserVerification />
       </Route>
-      <Route exact path="/user/dashboard/:email">
+      <Route exact path="/user/dashboard/">
         <UserDashboard />
       </Route>
-      <Route exact path="/user/profile/:email">
+      <Route exact path="/user/profile/">
         <UserProfile />
       </Route>
-      <Route exact path="/user/addbenificiary/:email">
+      <Route exact path="/user/addbenificiary/">
         <UserAddBeneficiary />
       </Route>
-      <Route exact path="/user/allbenificiary/:email">
+      <Route exact path="/user/allbenificiary/">
         <UserAllBeneficiary />
       </Route>
-      <Route exact path="/user/payment/:email">
+      <Route exact path="/user/payment/">
         <PaymentTransfer />
       </Route>
-      <Route exact path="/user/statements/:email">
+      <Route exact path="/user/statements/">
         <UserStatements />
       </Route>
       <Route exact path="/logout">

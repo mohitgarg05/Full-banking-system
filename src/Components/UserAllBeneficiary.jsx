@@ -23,10 +23,11 @@ class UserProfile extends Component{
     
     
    async componentDidMount(){
-    const mail1 = this.props.match.params.email;
-    this.setState({mail2 : mail1})
+    const mail = localStorage.getItem("Email")
+    console.log(mail);
+    this.setState({mail2 : mail})
     const data ={
-        email : mail1
+        email : mail
     }
     
     const res = await axios.post("https://full-banking-system.herokuapp.com/holderget/beneficiary",data);
@@ -41,14 +42,16 @@ class UserProfile extends Component{
         const {items} = this.state
         if(this.state.loggedin===false)
         {
-          return <Redirect to="/user" />
+          return <Redirect to="/" />
         }
         return(
             <>  
             <div id="App">
                 <SideBar mail={this.state.mail2}/>
                 <div className="container profile" >
-               
+                <div class="row profileimg">
+                       <p>All Beneficiary</p>
+                    </div>
                     <div class="row  profilegrid" >
                       <div class="profilecontent">
                         <div className="row table" style={{marginTop:"30px"}}>

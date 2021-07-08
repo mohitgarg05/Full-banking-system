@@ -20,10 +20,11 @@ class UserStatements extends Component{
     }
     
    async componentDidMount(){
-    const mail1 = this.props.match.params.email;
-    this.setState({mail2:mail1})
+    const mail = localStorage.getItem("Email")
+      console.log(mail);
+      this.setState({mail2 : mail})
     const data={
-        email : mail1
+        email : mail
     }
    
 
@@ -34,8 +35,8 @@ class UserStatements extends Component{
 
         const res2 = await axios.get("https://full-banking-system.herokuapp.com/user/details");
 
-        let obj2 = res2.data.response.find(o => o.UserEmail === mail1);
-        console.log(obj2.Account);
+        let obj2 = res2.data.response.find(o => o.UserEmail === mail);
+        console.log(obj2);
          
         this.setState({statements : res.data.response })
         this.setState({Account : obj2.Account})
@@ -50,7 +51,7 @@ class UserStatements extends Component{
     render(){
         if(this.state.loggedin===false)
         {
-          return <Redirect to="/user" />
+          return <Redirect to="/" />
         }
         return(
             <>  

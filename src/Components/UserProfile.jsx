@@ -20,11 +20,12 @@ class UserProfile extends Component{
     }
     
    async componentDidMount(){
-    const mail1 = this.props.match.params.email;
-   this.setState({mail2 : mail1})
+    const mail = localStorage.getItem("Email")
+      console.log(mail);
+      this.setState({mail2 : mail})
       const res = await axios.get("https://full-banking-system.herokuapp.com/user/details");
 
-      let obj = res.data.response.find(o => o.UserEmail === mail1);
+      let obj = res.data.response.find(o => o.UserEmail === mail);
       console.log(obj);
       
       this.setState({accountno : obj.Account})
@@ -46,7 +47,7 @@ class UserProfile extends Component{
     render(){
         if(this.state.loggedin===false)
         {
-          return <Redirect to="/user" />
+          return <Redirect to="/" />
         }
         return(
             <>  

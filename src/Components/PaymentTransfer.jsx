@@ -81,12 +81,13 @@ class PaymentTransfer extends Component{
     }
     
    async componentDidMount(){
-    const mail1 = this.props.match.params.email;
-    this.setState({mail2 : mail1})
+    const mail = localStorage.getItem("Email")
+    console.log(mail);
+    this.setState({mail2 : mail})
 
     const res1 = await axios.get("https://full-banking-system.herokuapp.com/user/details");
     
-    let obj = res1.data.response.find(o => o.UserEmail === mail1);
+    let obj = res1.data.response.find(o => o.UserEmail === mail);
     console.log(obj.Balance);
     this.setState({sendermoney : obj.Balance})
 
@@ -98,7 +99,7 @@ class PaymentTransfer extends Component{
     render(){
         if(this.state.loggedin===false)
         {
-          return <Redirect to="/user" />
+          return <Redirect to="/" />
         }
         return(
             <>  

@@ -48,8 +48,9 @@ class UserProfile extends Component{
     }
     
    async componentDidMount(){
-    const mail1 = this.props.match.params.email;
-    this.setState({mail2 : mail1})
+    const mail = localStorage.getItem("Email")
+    console.log(mail);
+    this.setState({mail2 : mail})
 
   
  }
@@ -57,7 +58,7 @@ class UserProfile extends Component{
     render(){
         if(this.state.loggedin===false)
         {
-          return <Redirect to="/user" />
+          return <Redirect to="/" />
         }
         return(
             <>  

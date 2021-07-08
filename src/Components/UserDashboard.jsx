@@ -21,25 +21,29 @@ import axios from 'axios'
     }
 
    async componentDidMount(){
-       const mail1 = this.props.match.params.email;
-      this.setState({mail2 : mail1})
+      //  const mail1 = this.props.match.params.email;
+      // this.setState({mail2 : mail1})
+
+      const mail = localStorage.getItem("Email")
+      console.log(mail);
+      this.setState({mail2 : mail})
          const res = await axios.get("https://full-banking-system.herokuapp.com/user/details");
  
-         let obj = res.data.response.find(o => o.UserEmail === mail1);
+         let obj = res.data.response.find(o => o.UserEmail === mail);
          
          this.setState({balance: obj.Balance})
          this.setState({accountno : obj.Account})
          this.setState({benebank : obj.BeneficiaryBank})
          this.setState({beneacc : obj.BeneficiaryAccount})
          this.setState({upi : obj.UPI})
+         const data2={
+          email : mail
+      }
 
-
-         const response2 = await axios.get("https://full-banking-system.herokuapp.com/holderget/beneficiary");
-         
+         const response2 = await axios.post("https://full-banking-system.herokuapp.com/holderget/beneficiary",data2);
+         console.log(response2.data);
           this.setState({length : response2.data.response.length })
-          const data2={
-            email : mail1
-        }
+          
 
 
           const res3 = await axios.post("https://full-banking-system.herokuapp.com/transfer/hostory/get",data2)
@@ -53,7 +57,7 @@ import axios from 'axios'
     render(){
       if(this.state.loggedin===false)
       {
-        return <Redirect to="/user" />
+        return <Redirect to="/" />
       }
         return(
             <div id="App">
@@ -128,8 +132,7 @@ import axios from 'axios'
                       </div>
                     </div>
                   </div>
-                  
-         <Link to="/logout">Logout</Link>
+              
 
             </div>
         );
